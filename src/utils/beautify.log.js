@@ -34,7 +34,9 @@ const beautify = {
 			return str;
 		});
 
-		console.log(...strings, '\x1b[0m');
+		strings[strings.length - 1] = `${strings[strings.length - 1]}\x1b[0m`
+
+		console.log(...strings);
 	},
 };
 
