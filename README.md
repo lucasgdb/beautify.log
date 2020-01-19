@@ -1,6 +1,6 @@
 # Beautify log
 
-![CRAN/METACRAN](https://img.shields.io/github/license/lucasnaja/who-does-not-follow-me)
+![CRAN/METACRAN](https://img.shields.io/github/license/lucasnaja/beautify.log)
 
 ## Description
 
