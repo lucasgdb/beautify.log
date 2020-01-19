@@ -1,7 +1,7 @@
 {
 	"name": "beautify.log",
-	"description": "A Node.js script to beautify the console.log from JavaScript with colors, making it easy and useful.",
-	"version": "1.0.1",
+	"description": "A Node.js lib to beautify the console.log from JavaScript with colors, making it easy and useful.",
+	"version": "1.0.2",
 	"main": "src/index.js",
 	"repository": "git@github.com:lucasnaja/beautify.log.git",
 	"author": "Lucas Bittencourt <lucasnaja0@gmail.com>",
@@ -10,7 +10,8 @@
 		"color",
 		"terminal",
 		"escape",
-		"node"
+		"node",
+		"console-log"
 	],
 	"devDependencies": {
 		"eslint": "^6.8.0",
