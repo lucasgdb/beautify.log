@@ -23,22 +23,22 @@ All parameters are case-insensitive.
 | {blink}      | Blinks the text                          |
 | {reverse}    | Reverses background and foreground color |
 | {hidden}     | Hides the text                           |
-| {fgblack}    | Foreground's color                       |
-| {fgred}      | Foreground's color                       |
-| {fggreen}    | Foreground's color                       |
-| {fgyellow}   | Foreground's color                       |
-| {fgblue}     | Foreground's color                       |
-| {fgmagenta}  | Foreground's color                       |
-| {fgcyan}     | Foreground's color                       |
-| {fgwhite}    | Foreground's color                       |
-| {bgblack}    | Background's color                       |
-| {bgred}      | Background's color                       |
-| {bggreen}    | Background's color                       |
-| {bgyellow}   | Background's color                       |
-| {bgblue}     | Background's color                       |
-| {bgmagenta}  | Background's color                       |
-| {bgcyan}     | Background's color                       |
-| {bgwhite}    | Background's color                       |
+| {fgBlack}    | Foreground's color                       |
+| {fgRed}      | Foreground's color                       |
+| {fgGreen}    | Foreground's color                       |
+| {fgYellow}   | Foreground's color                       |
+| {fgBlue}     | Foreground's color                       |
+| {fgMagenta}  | Foreground's color                       |
+| {fgCyan}     | Foreground's color                       |
+| {fgWhite}    | Foreground's color                       |
+| {bgBlack}    | Background's color                       |
+| {bgRed}      | Background's color                       |
+| {bgGreen}    | Background's color                       |
+| {bgYellow}   | Background's color                       |
+| {bgBlue}     | Background's color                       |
+| {bgMagenta}  | Background's color                       |
+| {bgCyan}     | Background's color                       |
+| {bgWhite}    | Background's color                       |
 
 ## Code
 
