@@ -1,10 +1,13 @@
 # Beautify log
 
+![CRAN/METACRAN](https://img.shields.io/github/issues/lucasnaja/beautify.log)
+![CRAN/METACRAN](https://img.shields.io/github/forks/lucasnaja/beautify.log)
+![CRAN/METACRAN](https://img.shields.io/github/stars/lucasnaja/beautify.log)
 ![CRAN/METACRAN](https://img.shields.io/github/license/lucasnaja/beautify.log)
 
 ## Description
 
-A Node.js script to beautify the console.log from JavaScript with colors, making it easy and useful.
+A Node.js lib to beautify the console.log from JavaScript with colors, making it easy and useful.
 
 ## How to use
 
@@ -40,15 +43,26 @@ All parameters are case-insensitive.
 | {bgCyan}     | Background's color                       |
 | {bgWhite}    | Background's color                       |
 
-## Code
+## Usage
 
 ```js
 const beautify = require('beautify.log');
 
-beautify.log('{fgRed}Hello, {fgGreen}world!'); // Hello, world!
+beautify.log('{fgRed}Hello, {fgGreen}world!');
+beautify.log('{bgWhite}{fgRed}Hello, {bgRed}{fgGreen}world!');
+beautify.log('{fgGreen}Hello, {fgRed}world!');
+beautify.log('{dim}{fgRed}Hello, {fgGreen}world!');
+beautify.log('{underscore}{fgRed}Hello, {fgGreen}world!');
+beautify.log('{bright}{fgRed}Hello, {fgGreen}world!');
+beautify.log(
+	'{bright}{fgYellow}Lorem ipsum dolor {fgBlue}sit amet consectetur {fgCyan}adipisicing elit.',
+);
+beautify.log(
+	'{bright}{fgYellow}Lorem ipsum dolor {reset}{bgRed}sit amet consectetur{reset} {fgCyan}adipisicing elit.',
+);
 ```
 
-## Image
+## Output
 
 ![who-does-not-follow-me](./images/beautify.log.png)
 
