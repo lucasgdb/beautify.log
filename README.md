@@ -58,7 +58,10 @@ beautify.log(
 	'{bright}{fgYellow}Lorem ipsum dolor {fgBlue}sit amet consectetur {fgCyan}adipisicing elit.',
 );
 beautify.log(
-	'{bright}{fgYellow}Lorem ipsum dolor {reset}{bgRed}sit amet consectetur{reset} {fgCyan}adipisicing elit.',
+	'{fgYellow}Lorem ipsum dolor {reset}{bgRed}sit amet consectetur{reset} {fgCyan}adipisicing elit.',
+);
+beautify.log(
+	'{reverse}{fgYellow}Lorem ipsum dolor{reset} {reverse}{bgRed}sit amet consectetur{reset} {reverse}{fgCyan}adipisicing elit.',
 );
 ```
 
