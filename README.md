@@ -1,9 +1,9 @@
 # Beautify log
 
-![CRAN/METACRAN](https://img.shields.io/github/issues/lucasnaja/beautify.log)
-![CRAN/METACRAN](https://img.shields.io/github/forks/lucasnaja/beautify.log)
-![CRAN/METACRAN](https://img.shields.io/github/stars/lucasnaja/beautify.log)
-![CRAN/METACRAN](https://img.shields.io/github/license/lucasnaja/beautify.log)
+![CRAN/METACRAN](https://img.shields.io/github/issues/lucasgdb/beautify.log)
+![CRAN/METACRAN](https://img.shields.io/github/forks/lucasgdb/beautify.log)
+![CRAN/METACRAN](https://img.shields.io/github/stars/lucasgdb/beautify.log)
+![CRAN/METACRAN](https://img.shields.io/github/license/lucasgdb/beautify.log)
 
 ## Description
 
