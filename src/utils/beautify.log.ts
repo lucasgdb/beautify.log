@@ -1,7 +1,7 @@
 const beautify = {
-	log(...params) {
-		const strings = params.map(string => {
-			let str = string;
+	log(...params: string[]) {
+		const strings = params.map((param: string) => {
+			let str = param;
 
 			const texts = [
 				'reset',
@@ -72,4 +72,4 @@ const beautify = {
 	},
 };
 
-module.exports = beautify;
+export default beautify;
