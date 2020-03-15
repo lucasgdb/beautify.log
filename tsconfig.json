@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "esModuleInterop": true,
+        "allowJs": true,
+        "noEmit": true,
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "strict": true
+    },
+    "include": ["src"],
+    "exclude": ["dist", "node_modules"]
+}
