@@ -46,7 +46,7 @@ All parameters are case-insensitive.
 ## Usage
 
 ```js
-const beautify = require('beautify.log');
+const beautify = require('beautify.log'); // or import beautify from 'beautify.log';
 
 beautify.log('{fgRed}Hello, {fgGreen}world!');
 beautify.log('{bgWhite}{fgRed}Hello, {bgRed}{fgGreen}world!');
@@ -72,5 +72,4 @@ beautify.log(
 ## Author
 
 | [<img src="https://avatars3.githubusercontent.com/u/13838273?v=3&s=115"><br><sub>@lucasgdb</sub>](https://github.com/lucasgdb) |
-| :------------------------------------------------------------------------------------------------------------------------------: |
-
+| :----------------------------------------------------------------------------------------------------------------------------: |
