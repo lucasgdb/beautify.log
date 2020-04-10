@@ -1,5 +1,3 @@
 declare module 'beautify.log' {
-	function log(string: string): void;
-
-	export = log;
+	export function log(string: string): void;
 }
