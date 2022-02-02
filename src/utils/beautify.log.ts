@@ -1,74 +1,67 @@
-const beautify = {
-	log(...params: string[]) {
-		const strings = params.map((param: string) => {
-			let str = param;
+const codeTexts: { [text: string]: string } = {
+	reset: '\x1b[0m',
+	bright: '\x1b[1m',
+	dim: '\x1b[2m',
+	underscore: '\x1b[4m',
+	blink: '\x1b[5m',
+	reverse: '\x1b[7m',
+	hidden: '\x1b[8m',
+	fgBlack: '\x1b[30m',
+	fgRed: '\x1b[31m',
+	fgGreen: '\x1b[32m',
+	fgYellow: '\x1b[33m',
+	fgBlue: '\x1b[34m',
+	fgMagenta: '\x1b[35m',
+	fgCyan: '\x1b[36m',
+	fgWhite: '\x1b[37m',
+	bgBlack: '\x1b[40m',
+	bgRed: '\x1b[41m',
+	bgGreen: '\x1b[42m',
+	bgYellow: '\x1b[43m',
+	bgBlue: '\x1b[44m',
+	bgMagenta: '\x1b[45m',
+	bgCyan: '\x1b[46m',
+	bgWhite: '\x1b[47m',
+};
 
-			const texts = [
-				'reset',
-				'bright',
-				'dim',
-				'underscore',
-				'blink',
-				'reverse',
-				'hidden',
-				'fgBlack',
-				'fgRed',
-				'fgGreen',
-				'fgYellow',
-				'fgBlue',
-				'fgMagenta',
-				'fgCyan',
-				'fgWhite',
-				'bgBlack',
-				'bgRed',
-				'bgGreen',
-				'bgYellow',
-				'bgBlue',
-				'bgMagenta',
-				'bgCyan',
-				'bgWhite',
-			];
+const convertText = async (text: string): Promise<string> => {
+	return new Promise((resolve) => {
+		const texts = Object.keys(codeTexts);
 
-			const codes = [
-				'\x1b[0m',
-				'\x1b[1m',
-				'\x1b[2m',
-				'\x1b[4m',
-				'\x1b[5m',
-				'\x1b[7m',
-				'\x1b[8m',
-				'\x1b[30m',
-				'\x1b[31m',
-				'\x1b[32m',
-				'\x1b[33m',
-				'\x1b[34m',
-				'\x1b[35m',
-				'\x1b[36m',
-				'\x1b[37m',
-				'\x1b[40m',
-				'\x1b[41m',
-				'\x1b[42m',
-				'\x1b[43m',
-				'\x1b[44m',
-				'\x1b[45m',
-				'\x1b[46m',
-				'\x1b[47m',
-			];
-
-			for (let i = 0; i < texts.length; i++) {
-				str = str.replace(RegExp(`{${texts[i]}}`, 'gi'), codes[i]);
+		for (let i = 0; i < texts.length; i++) {
+			if (!text.toLowerCase().includes(texts[i].toLowerCase())) {
+				continue;
 			}
 
-			return str;
-		});
-
-		if (strings.length) {
-			strings[strings.length - 1] = `${
-				strings[strings.length - 1]
-			}\x1b[0m`;
+			text = text.replace(
+				new RegExp(`{${texts[i]}}`, 'gi'),
+				codeTexts[texts[i]],
+			);
 		}
 
-		console.log(...strings);
+		resolve(text);
+	});
+};
+
+const resetFinalText = (text: string) => {
+	if (text.includes('\x1b[0m')) {
+		return text;
+	}
+
+	return `${text}\x1b[0m`;
+};
+
+const beautify = {
+	async log(...textsParam: string[]) {
+		const convertedTexts = await Promise.all(textsParam.map(convertText));
+
+		if (convertedTexts.length > 0) {
+			convertedTexts[convertedTexts.length - 1] = resetFinalText(
+				convertedTexts[convertedTexts.length - 1],
+			);
+		}
+
+		console.log(...convertedTexts);
 	},
 };
 
