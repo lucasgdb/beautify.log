@@ -24,23 +24,18 @@ const codeTexts: { [text: string]: string } = {
   bgWhite: '\x1b[47m',
 };
 
-const convertText = async (text: string): Promise<string> => {
-  return new Promise((resolve) => {
-    const texts = Object.keys(codeTexts);
+const convertText = (text: string) => {
+  const texts = Object.keys(codeTexts);
 
-    for (let i = 0; i < texts.length; i++) {
-      if (!text.toLowerCase().includes(texts[i].toLowerCase())) {
-        continue;
-      }
-
-      text = text.replace(
-        new RegExp(`{${texts[i]}}`, 'gi'),
-        codeTexts[texts[i]]
-      );
+  for (let i = 0; i < texts.length; i++) {
+    if (!text.toLowerCase().includes(texts[i].toLowerCase())) {
+      continue;
     }
 
-    resolve(text);
-  });
+    text = text.replace(new RegExp(`{${texts[i]}}`, 'gi'), codeTexts[texts[i]]);
+  }
+
+  return text;
 };
 
 const resetFinalText = (text: string) => {
@@ -52,8 +47,8 @@ const resetFinalText = (text: string) => {
 };
 
 const beautify = {
-  async log(...textsParam: string[]) {
-    const convertedTexts = await Promise.all(textsParam.map(convertText));
+  log(...textsParam: string[]) {
+    const convertedTexts = textsParam.map(convertText);
 
     if (convertedTexts.length > 0) {
       convertedTexts[convertedTexts.length - 1] = resetFinalText(
