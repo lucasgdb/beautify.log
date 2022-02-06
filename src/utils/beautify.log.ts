@@ -24,39 +24,49 @@ const codeTexts: { [text: string]: string } = {
   bgWhite: '\x1b[47m',
 };
 
-const convertText = (text: string) => {
-  const texts = Object.keys(codeTexts);
+const texts = Object.keys(codeTexts);
 
+export const transformMessage = (message: any) => {
   for (let i = 0; i < texts.length; i++) {
-    if (!text.toLowerCase().includes(texts[i].toLowerCase())) {
+    if (!message.toLowerCase().includes(texts[i].toLowerCase())) {
       continue;
     }
 
-    text = text.replace(new RegExp(`{${texts[i]}}`, 'gi'), codeTexts[texts[i]]);
+    message = message.replace(
+      new RegExp(`{${texts[i]}}`, 'gi'),
+      codeTexts[texts[i]]
+    );
   }
 
-  return text;
+  return message;
 };
 
-const resetFinalText = (text: string) => {
-  if (text.includes('\x1b[0m')) {
-    return text;
+export const resetFinalMessage = (message: string) => {
+  if (message.includes('\x1b[0m')) {
+    return message;
   }
 
-  return `${text}\x1b[0m`;
+  return `${message}\x1b[0m`;
+};
+
+export const transformMessages = (message?: any, ...optionalParams: any[]) => {
+  const transformedMessages = [message, ...optionalParams].map(
+    transformMessage
+  );
+
+  if (transformedMessages.length > 0) {
+    transformedMessages[transformedMessages.length - 1] = resetFinalMessage(
+      transformedMessages[transformedMessages.length - 1]
+    );
+  }
+
+  return transformedMessages;
 };
 
 const beautify = {
-  log(...textsParam: string[]) {
-    const convertedTexts = textsParam.map(convertText);
-
-    if (convertedTexts.length > 0) {
-      convertedTexts[convertedTexts.length - 1] = resetFinalText(
-        convertedTexts[convertedTexts.length - 1]
-      );
-    }
-
-    console.log(...convertedTexts);
+  log(message?: any, ...optionalParams: any[]) {
+    const transformedLog = transformMessages(message, ...optionalParams);
+    console.log(...transformedLog);
   },
 };
 
