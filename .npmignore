@@ -1,0 +1,12 @@
+.prettierrc
+.eslintrc.js
+.editorconfig
+
+babel.config.json
+jest.config.js
+tsconfig.json
+
+dist
+node_modules
+typing
+src
