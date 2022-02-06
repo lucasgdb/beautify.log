@@ -11,7 +11,7 @@ A Node.js lib to beautify the console.log from JavaScript with colors, making it
 
 ## How to use
 
--   type `yarn add beautify.log` or `npm i beautify.log -s`
+- type `yarn add beautify.log` or `npm i beautify.log -s`
 
 ## Documentation
 
@@ -46,7 +46,7 @@ All parameters are case-insensitive.
 ## Usage
 
 ```js
-const beautify = require('beautify.log'); // or import beautify from 'beautify.log';
+const beautify = require('beautify.log').default; // or import beautify from 'beautify.log';
 
 beautify.log('{fgRed}Hello, {fgGreen}world!');
 beautify.log('{bgWhite}{fgRed}Hello, {bgRed}{fgGreen}world!');
@@ -55,13 +55,13 @@ beautify.log('{dim}{fgRed}Hello, {fgGreen}world!');
 beautify.log('{underscore}{fgRed}Hello, {fgGreen}world!');
 beautify.log('{bright}{fgRed}Hello, {fgGreen}world!');
 beautify.log(
-	'{bright}{fgYellow}Lorem ipsum dolor {fgBlue}sit amet consectetur {fgCyan}adipisicing elit.',
+  '{bright}{fgYellow}Lorem ipsum dolor {fgBlue}sit amet consectetur {fgCyan}adipisicing elit.'
 );
 beautify.log(
-	'{fgYellow}Lorem ipsum dolor {reset}{bgRed}sit amet consectetur{reset} {fgCyan}adipisicing elit.',
+  '{fgYellow}Lorem ipsum dolor {reset}{bgRed}sit amet consectetur{reset} {fgCyan}adipisicing elit.'
 );
 beautify.log(
-	'{reverse}{fgYellow}Lorem ipsum dolor{reset} {reverse}{bgRed}sit amet consectetur{reset} {reverse}{fgCyan}adipisicing elit.',
+  '{reverse}{fgYellow}Lorem ipsum dolor{reset} {reverse}{bgRed}sit amet consectetur{reset} {reverse}{fgCyan}adipisicing elit.'
 );
 ```
 
