@@ -10,5 +10,5 @@
     "declarationDir": "typing"
   },
   "include": ["src"],
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["**/__tests__"]
 }
