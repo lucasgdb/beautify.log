@@ -42,7 +42,12 @@ export const transformMessage = (message: any) => {
 };
 
 export const resetFinalMessage = (message: string) => {
-  if (message.includes('\x1b[0m')) {
+  if (
+    message
+      .trim()
+      .substring(message.length - 7)
+      .includes('\x1b[0m')
+  ) {
     return message;
   }
 
