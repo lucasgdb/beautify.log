@@ -17,6 +17,7 @@ module.exports = {
     indent: ['error', 2],
     semi: ['error', 'always'],
     quotes: ['error', 'single', 'avoid-escape'],
+    '@typescript-eslint/no-explicit-any': 'off',
   },
   settings: {
     'import/resolver': {
