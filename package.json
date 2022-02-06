@@ -1,7 +1,7 @@
 {
   "name": "beautify.log",
   "description": "A Node.js lib to beautify the console.log from JavaScript with colors, making it easy and useful.",
-  "version": "2.2.0",
+  "version": "3.0.0",
   "main": "dist/index.js",
   "types": "typing/index.d.ts",
   "repository": "git@github.com:lucasgdb/beautify.log.git",
